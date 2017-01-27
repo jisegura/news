@@ -1,0 +1,20 @@
+{
+  "name": "news",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "hshp"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "news"
+  ],
+  "homepage": "https://github.com/jisegura/news",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
