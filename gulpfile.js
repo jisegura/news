@@ -30,7 +30,7 @@ function htmlReload() {
 }
 
 function jsHint() {
-	return gulp.src(['./app/js/main.js', './gulpfile.js'])
+	return gulp.src(['./app/js/main.js', './gulpfile.js', './app/js/vsop.js'])
 		.pipe(jshint('.jshintrc'))
 		.pipe(jshint.reporter('jshint-stylish'))
 		.pipe(jshint.reporter('fail'));
