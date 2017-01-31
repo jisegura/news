@@ -74,8 +74,8 @@ function transitionScroll(value) {
 }
 
 function displaywheel(e){
-  var evt=window.event || e;
-  var delta=evt.detail? evt.detail*(-120) : evt.wheelDelta;
+  var evt = window.event || e;
+  var delta = evt.detail ? evt.detail*(-120) : evt.wheelDelta;
   transitionScroll(delta);
 }
 
@@ -97,7 +97,7 @@ $(document).ready(function() {
     event.preventDefault();
   });
 
-  var mousewheelevt=(/Firefox/i.test(navigator.userAgent))? 'DOMMouseScroll' : 'mousewheel' ;
+  var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? 'DOMMouseScroll' : 'mousewheel';
 
   if (document.attachEvent) {
     document.attachEvent('on'+mousewheelevt, displaywheel);
