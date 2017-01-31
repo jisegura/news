@@ -6,6 +6,14 @@ background-linear-gradient(startPoint, startColor, startInterval, endColor, endI
 	background -o-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
 	background linear-gradient(startPoint, startColor startInterval, endColor endInterval)
 
+background-linear-gradient3d(startPoint, startColor, startInterval, midColor, midInterval, endColor, endInterval)
+	background startColor
+	background -webkit-linear-gradient(startPoint, startColor startInterval, midColor midInterval, endColor endInterval)
+	background -moz-linear-gradient(startPoint, startColor startInterval, midColor midInterval, endColor endInterval)
+	background -ms-linear-gradient(startPoint, startColor startInterval, midColor midInterval, endColor endInterval)
+	background -o-linear-gradient(startPoint, startColor startInterval, midColor midInterval, endColor endInterval)
+	background linear-gradient(startPoint, startColor startInterval, midColor midInterval, endColor endInterval)
+
 box-shadow(args...)
 	-webkit-box-shadow args
 	-moz-box-shadow args
