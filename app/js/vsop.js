@@ -83,6 +83,7 @@ $(document).ready(function() {
   initMainContainer();
   initSecciones();
 
+  // KEYS
   $(document).keydown(function(event) {
     switch(event.keyCode) {
       case KEY_UP:
@@ -97,6 +98,7 @@ $(document).ready(function() {
     event.preventDefault();
   });
 
+  // WHEEL
   var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? 'DOMMouseScroll' : 'mousewheel';
 
   if (document.attachEvent) {
@@ -105,6 +107,17 @@ $(document).ready(function() {
   else if (document.addEventListener) {
     document.addEventListener(mousewheelevt, displaywheel, false);
   }
+
+  // TOUCH
+  var vsop = document.getElementById('VerticalScrollFullPage');
+  var mc = new Hammer(vsop);
+  mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+  mc.on('panup', function() {
+      transitionScroll(-1);
+  });
+  mc.on('pandown', function() {
+      transitionScroll(1);
+  });
 
   $(window).resize(function() {
     setSecciones();
