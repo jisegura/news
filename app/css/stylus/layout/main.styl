@@ -52,66 +52,80 @@ textarea
 			transform translateY(-50%)
 			width 100%
 			z-index 2
+			
+			h1
+				font-family 'Yanone Kaffeesatz'
+				font-size 80px
+				text-transform uppercase
+				color $white
+				
+			p
+				font-family 'Yanone Kaffeesatz'
+				font-size 20px
+				padding 0 100px
+				color $white
 
 			.section-btn
 				margin-top 50px
 
-				.a_btn
-					height 90px
-					padding 29px 32px 0px
-					margin 0 15px
-					min-width 210px
-					font-size 20px
-					position relative
-					overflow hidden
-					color $white
-					font-family 'Yanone Kaffeesatz'
-					font-weight 400
-					letter-spacing 2px
-					background-color transparent
-					text-decoration none
-					text-transform uppercase
-					text-align center
-					box-sizing border-box
-					border 3px solid $white
-					display inline-block
-					zoom 1
-					word-spacing 0
+.a_btn
+	height 90px
+	padding 29px 32px 0px
+	margin 0 15px
+	min-width 210px
+	font-size 20px
+	position relative
+	overflow hidden
+	color $white
+	font-family 'Yanone Kaffeesatz'
+	font-weight 400
+	letter-spacing 2px
+	background-color transparent
+	text-decoration none
+	text-transform uppercase
+	text-align center
+	box-sizing border-box
+	border 3px solid $white
+	display inline-block
+	zoom 1
+	word-spacing 0
 
-					&:before
-						content ""
-						position absolute
-						width 100%
-						height 90px
-						background-color transparent
-						border-top 45px solid transparent
-						border-bottom 45px solid rgba($white,0.45)
-						border-right 210px solid transparent
-						border-left 210px solid rgba($white,0.45)
-						bottom 0
-						right 100%
-						transition all 0.2s ease-in-out
+	&:before
+		content ""
+		position absolute
+		width 100%
+		height 90px
+		background-color transparent
+		border-top 45px solid transparent
+		border-bottom 45px solid rgba($white,0.45)
+		border-right 210px solid transparent
+		border-left 210px solid rgba($white,0.45)
+		bottom 0
+		right 100%
+		transition all 0.2s ease-in-out
 
-					&:after
-						content ""
-						position absolute
-						width 100%
-						height 90px
-						background-color transparent
-						border-top 45px solid rgba($white,0.45)
-						border-bottom 45px solid transparent
-						border-right 210px solid rgba($white,0.45)
-						border-left 210px solid transparent
-						top 0
-						left 100%
-						transition all 0.2s ease-in-out
+	&:after
+		content ""
+		position absolute
+		width 100%
+		height 90px
+		background-color transparent
+		border-top 45px solid rgba($white,0.45)
+		border-bottom 45px solid transparent
+		border-right 210px solid rgba($white,0.45)
+		border-left 210px solid transparent
+		top 0
+		left 100%
+		transition all 0.2s ease-in-out
 
 
-					&:hover
-					&:focus
+	&:hover
+	&:focus
+		text-decoration none
+		color $white
 
-						&:before
-							right 0
+		&:before
+			right 0
 
-						&:after
-							left 0
+		&:after
+			left 0
