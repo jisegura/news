@@ -110,7 +110,8 @@ $(document).ready(function() {
 
   // TOUCH
   var vsop = document.getElementById('VerticalScrollFullPage');
-  var mc = new Hammer(vsop);
+  delete Hammer.defaults.cssProps.userSelect;
+  var mc = new Hammer(vsop, { inputClass: Hammer.TouchInput });
   mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
   mc.on('panup', function() {
       transitionScroll(-1);

@@ -1,0 +1,39 @@
+.secondpage
+
+	.header
+		background-image url('/images/silicon-valley.jpg')
+		background-size cover
+		position relative
+		z-index -100
+		height 550px
+
+		&:after
+			content ""
+			display block
+			position absolute
+			top 0px
+			right 0px
+			left 0px
+			bottom 0px
+			z-index 1
+			background rgba($black, 0.5)
+
+		.title
+			position fixed
+			z-index 2
+			top 275px
+			text-align center
+			width 100%
+			color $white
+			text-transform uppercase
+
+			h1
+				font-size 80px
+				font-family 'Yanone Kaffeesatz'
+				font-weight 700
+				margin 0
+				padding 0
+
+	.body
+		height 2000px
+		background-color $gray33
