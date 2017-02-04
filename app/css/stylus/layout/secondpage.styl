@@ -35,5 +35,62 @@
 				padding 0
 
 	.body
-		height 2000px
-		background-color $gray33
+		margin 0 auto
+		height 100%
+		position relative
+		background-color $black
+		z-index 1
+
+		.info
+			margin 0
+			padding 0
+
+			article
+				position relative
+				overflow hidden
+				background-color $white
+
+				.col1
+					width 44.44444%
+					position absolute
+					top 50%
+					transform translateY(-50%)
+
+					.text
+						text-align center
+						margin 30px auto
+						color $black
+
+						h3
+							font-size 32px
+							line-height 39px
+							font-family 'Yanone Kaffeesatz'
+							text-transform uppercase
+
+						p
+							font-size 14px
+							display block
+							line-height 23px
+
+				.col2
+					float right
+					width 55.55556%
+					margin 0
+					padding 0
+
+					img
+						width 100%
+						display block
+
+				&.inv
+					background-color $black
+
+					.col1
+						left auto
+						right 0
+
+						.text
+							color $white
+
+					.col2
+						float left
