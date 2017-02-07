@@ -1,0 +1,27 @@
+.spinner
+  width 40px
+  height 40px
+  background-color #333
+  background-image url('../images/logo2.png')
+  background-size cover
+  margin 100px auto
+  display none
+  border-style solid
+  animation sk-rotateplane 1.5s infinite ease-in-out
+
+@keyframes sk-rotateplane
+  0%
+    transform perspective(120px) rotateX(0deg) rotateY(0deg)
+  45%
+    transform perspective(120px) rotateX(-180deg) rotateY(0deg)
+  100%
+    transform perspective(120px) rotateX(-720deg) rotateY(0deg)
+
+  // 0%
+  //   transform perspective(120px) rotateX(0deg) rotateY(0deg)
+  // 33%
+  //   transform perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+  // 66%
+  //   transform perspective(120px) rotateX(-180deg) rotateY(-179.9deg)
+  // 100%
+  //   transform perspective(120px) rotateX(0deg) rotateY(0deg)
