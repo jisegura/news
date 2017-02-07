@@ -1,7 +1,170 @@
 @media (max-width: 767px)
+	.section
+
+		section
+
+			.center-row
+				padding-top 200px
+				padding-bottom 200px
+
+				.section-title
+
+					h1
+						font-size 60px
+
+					p
+						font-size 16px
+						padding 0 15px
+
 	.homesection
 		background url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg') no-repeat
 		background-size cover
 
 		video
 			display none
+
+	.a_btn
+		height 70px
+		padding 19px 22px 0px
+		margin 10px 25px
+		display block
+
+		&:before
+			height 70px
+			border-top 35px solid transparent
+			border-bottom 35px solid rgba($white,0.45)
+			border-right 210px solid transparent
+			border-left 210px solid rgba($white,0.45)
+
+		&:after
+			height 70px
+			border-top 35px solid rgba($white,0.45)
+			border-bottom 35px solid transparent
+			border-right 210px solid rgba($white,0.45)
+			border-left 210px solid transparent
+
+	nav
+
+		&.navbar
+			height 100%
+			margin-bottom 0
+			overflow hidden
+
+			.container
+				height 100%
+
+				.navbar-collapse
+					min-height 100%
+					opacity 0
+					transition 0.5s opacity
+
+					ul
+
+						li
+
+							a
+								font-size 22px
+								padding-top 15px !important
+								padding-bottom 15px !important
+
+							&.active
+
+								a
+									color red
+
+					&.in
+						opacity 1
+
+			&:after
+				top 0
+				right 0
+				min-height 0%
+				min-width 0%
+				border-bottom-left-radius 100%
+				background-color $black
+				opacity 0
+				transition 1s all
+
+			&.open
+
+				&:after
+					opacity 1
+					min-height 150%
+					min-width 150%
+
+@media (min-width: 768px)
+	.section
+
+		section
+
+			.center-row
+				position absolute
+				top 50%
+				transform translateY(-50%)
+
+				.section-title
+
+					h1
+						font-size 70px
+
+					p
+						font-size 20px
+						padding 0 100px
+
+	.a_btn
+		height 90px
+		padding 29px 32px 0px
+		margin 0 15px
+		display inline-block
+
+		&:before
+			height 90px
+			border-top 45px solid transparent
+			border-bottom 45px solid rgba($white,0.45)
+			border-right 210px solid transparent
+			border-left 210px solid rgba($white,0.45)
+
+		&:after
+			height 90px
+			border-top 45px solid rgba($white,0.45)
+			border-bottom 45px solid transparent
+			border-right 210px solid rgba($white,0.45)
+			border-left 210px solid transparent
+
+	nav
+
+		&.navbar
+
+			&:after
+				background-linear-gradient3d(to bottom, #000000, 0%, rgba(0, 0, 0, 0.49), 4%, rgba(0, 0, 0, 0), 100%)
+				width 100%
+				height 100px
+				top -50px
+
+			.navbar-collapse
+
+				ul
+
+					li
+
+						&:after
+							content ""
+							background-linear-gradient3d(to bottom, $success-bgc, 0%, rgba($success-bgc,.49), 4%, rgba($success-bgc, 0), 100%)
+							position absolute
+							width 100%
+							height 100%
+							top -20px
+							left 0
+							max-height 20px
+							transition max-height 0.3s ease
+
+						&:hover
+						&:focus
+
+							&:after
+								max-height 80px
+
+						&.active
+
+							&:after
+								max-height 80px
