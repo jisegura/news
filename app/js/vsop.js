@@ -141,8 +141,8 @@ $(document).ready(function() {
 				default:
 					break;
 			}
-      event.preventDefault();
-		}		
+			event.preventDefault();
+		}
 	});
 
 	// WHEEL
@@ -158,7 +158,7 @@ $(document).ready(function() {
 	// TOUCH
 	var vsop = document.getElementById('VerticalScrollFullPage');
 	delete Hammer.defaults.cssProps.userSelect;
-	var mc = new Hammer(vsop, { inputClass: Hammer.TouchInput });
+	var mc = new Hammer(vsop, { inputClass: Hammer.TouchInput, touchAction: 'auto' });
 	mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 	mc.on('panup', function() {
 		if (enabledEvents(getWindowWidth())) {
