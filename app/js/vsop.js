@@ -7,6 +7,7 @@ const STATE = {
 	Mobile: 'mobile',
 	Desktop: 'desktop'
 };
+var isHome = true;
 var currentSection = 0;
 var cantidadSecciones = 0;
 var enAnimacion = false;
@@ -23,6 +24,18 @@ function getWindowWidth() {
 
 function isMobile(w) {
 	return (w < WIDTH_MOBILE);
+}
+
+function enabledEvents(width) {
+  if(isHome === false){
+    return false;
+  }
+  else if(isMobile(width)){
+    return false;
+  }
+  else {
+    return true;
+  }
 }
 
 function initMainContainer(of, h, tr) {
@@ -102,14 +115,14 @@ function transitionScroll(value) {
 function displaywheel(e){
 	var evt = window.event || e;
 	var delta = evt.detail ? evt.detail*(-120) : evt.wheelDelta;
-	if (!isMobile(getWindowWidth())) {
+	if (enabledEvents(getWindowWidth())) {
 		transitionScroll(delta);
 	}
 }
 
 $(document).ready(function() {
 
-	if (!isMobile(getWindowWidth())) {
+	if (enabledEvents(getWindowWidth())) {
 		initSetupDesktop();
 	} else {
 		initSetupMobile();
@@ -117,7 +130,7 @@ $(document).ready(function() {
 
 	// KEYS
 	$(document).keydown(function(event) {
-		if (!isMobile(getWindowWidth())) {
+		if (enabledEvents(getWindowWidth())) {
 			switch(event.keyCode) {
 				case KEY_UP:
 					transitionScroll(1);
@@ -128,8 +141,8 @@ $(document).ready(function() {
 				default:
 					break;
 			}
-		}
-		event.preventDefault();
+      event.preventDefault();
+		}		
 	});
 
 	// WHEEL
@@ -148,18 +161,18 @@ $(document).ready(function() {
 	var mc = new Hammer(vsop, { inputClass: Hammer.TouchInput });
 	mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 	mc.on('panup', function() {
-		if (!isMobile(getWindowWidth())) {
+		if (enabledEvents(getWindowWidth())) {
 			transitionScroll(-1);
 		}
 	});
 	mc.on('pandown', function() {
-		if (!isMobile(getWindowWidth())) {
+		if (enabledEvents(getWindowWidth())) {
 			transitionScroll(1);
 		}
 	});
 
 	$(window).resize(function() {
-		if (!isMobile(getWindowWidth())) {
+		if (enabledEvents(getWindowWidth())) {
 			if (currentState !== STATE.Desktop) {
 				initSetupDesktop();
 			}

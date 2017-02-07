@@ -1,9 +1,12 @@
-function ajaxTest() {
+$('.btn-evento').click(function(event){
+  event.preventDefault();
+  isHome = false;
+  initSetupMobile();
   $.ajax({
-    url: "../aTest.html",
+    url: "../templates/evento.html",
     dataType: 'html',
     beforeSend: function() {
-        $('#VerticalScrollFullPage').html('');
+      $('#VerticalScrollFullPage').html('');
       $('.spinner').css({'display':'block'});
     },
     success: function(html) {
@@ -12,7 +15,7 @@ function ajaxTest() {
         $('#VerticalScrollFullPage').html(html);},3000);
     }
   });
-}
+});
 
 // $(document).ready(function () {
 //     $(document).ajaxStart(function () {
