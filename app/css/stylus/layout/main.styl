@@ -42,6 +42,7 @@ textarea
 
 .section
 	position relative
+	z-index 1
 
 	section
 
@@ -53,37 +54,36 @@ textarea
 			right 0px
 			left 0px
 			bottom 0px
-			z-index 1
+			z-index -1
 			background rgba($black, 0.6)
 
 		.center-row
-			position absolute
-			top 50%
 			text-align center
-			transform translateY(-50%)
 			width 100%
 			z-index 2
 
-			h1
-				font-family 'Yanone Kaffeesatz'
-				font-weight 700
-				font-size 80px
-				text-transform uppercase
-				color $white
+			.section-title
 
-			p
-				font-family 'Yanone Kaffeesatz'
-				font-size 20px
-				padding 0 100px
-				color $white
+				.title-img
+					display inline-block
+					height 200px
+					width 200px
+
+				h1
+					font-family 'Yanone Kaffeesatz'
+					font-weight 700
+					text-transform uppercase
+					color $white
+
+				p
+					font-family 'Yanone Kaffeesatz'
+					color $white
 
 			.section-btn
 				margin-top 50px
 
 .a_btn
-	height 90px
-	padding 29px 32px 0px
-	margin 0 15px
+	width auto
 	min-width 210px
 	font-size 20px
 	position relative
@@ -98,7 +98,6 @@ textarea
 	text-align center
 	box-sizing border-box
 	border 3px solid $white
-	display inline-block
 	zoom 1
 	word-spacing 0
 
@@ -106,12 +105,7 @@ textarea
 		content ""
 		position absolute
 		width 100%
-		height 90px
 		background-color transparent
-		border-top 45px solid transparent
-		border-bottom 45px solid rgba($white,0.45)
-		border-right 210px solid transparent
-		border-left 210px solid rgba($white,0.45)
 		bottom 0
 		right 100%
 		transition all 0.2s ease-in-out
@@ -120,12 +114,7 @@ textarea
 		content ""
 		position absolute
 		width 100%
-		height 90px
 		background-color transparent
-		border-top 45px solid rgba($white,0.45)
-		border-bottom 45px solid transparent
-		border-right 210px solid rgba($white,0.45)
-		border-left 210px solid transparent
 		top 0
 		left 100%
 		transition all 0.2s ease-in-out
