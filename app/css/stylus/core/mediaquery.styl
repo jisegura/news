@@ -46,9 +46,10 @@
 	nav
 
 		&.navbar
-			height 100%
+			height auto
 			margin-bottom 0
 			overflow hidden
+			transition 1s all
 
 			.container
 				height 100%
@@ -86,6 +87,9 @@
 				transition 1s all
 
 			&.open
+				height 100%
+
+			&.openAnimation
 
 				&:after
 					opacity 1
