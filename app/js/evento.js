@@ -6,13 +6,18 @@ $('.btn-evento').click(function(event){
     url: "../templates/evento.html",
     dataType: 'html',
     beforeSend: function() {
-      $('#VerticalScrollFullPage').html('');
-      $('.spinner').css({'display':'block'});
+      $('#MainBody').html('');
+      $('#loader-wrapper').css({'display':'block'});
     },
     success: function(html) {
       setTimeout(function(){
-        $('.spinner').css({'display':'none'});
-        $('#VerticalScrollFullPage').html(html);},3000);
+        $('#MainBody').html(html);
+        $('#loader-wrapper').addClass('loaded');
+        $('.loader-section').one('transitionend', function() {
+          $('#loader-wrapper').css({'display':'none'});
+          $('#loader-wrapper').removeClass('loaded');
+        });
+      },3000);
     }
   });
 });
