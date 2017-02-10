@@ -1,25 +1,28 @@
+'use strict';
+
+function setBodyHTML(html) {
+	$('#MainBody').html(html);
+}
+
 $('.btn-evento').click(function(event){
-  event.preventDefault();
-  isHome = false;
-  initSetupMobile();
-  $.ajax({
-    url: "../templates/evento.html",
-    dataType: 'html',
-    beforeSend: function() {
-      $('#MainBody').html('');
-      $('#loader-wrapper').css({'display':'block'});
-    },
-    success: function(html) {
-      setTimeout(function(){
-        $('#MainBody').html(html);
-        $('#loader-wrapper').addClass('loaded');
-        $('.loader-section').one('transitionend', function() {
-          $('#loader-wrapper').css({'display':'none'});
-          $('#loader-wrapper').removeClass('loaded');
-        });
-      },3000);
-    }
-  });
+	event.preventDefault();
+	isHome = false;
+	initSetupMobile();
+	$.ajax({
+		url: '../templates/evento.html',
+		dataType: 'html',
+		beforeSend: function() {
+			setBodyHTML('');
+			setLoaderDisplay('block');
+		},
+		success: function(html) {
+			setTimeout(function(){
+				setBodyHTML(html);
+				animationLoader();
+				animationNavbar();
+			},3000);
+		}
+	});
 });
 
 // $(document).ready(function () {
