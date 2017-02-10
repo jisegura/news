@@ -1,8 +1,21 @@
 .openNav
 	animation-name openNav
 	animation-duration 1s
+	animation-fill-mode both
 	animation-iteration-count 1
 
+.fadeInDown
+	animation-name fadeInDown
+	animation-duration 1s
+	animation-fill-mode both
+	animation-iteration-count 1
+	animation-delay 1s
+
+.zoomInDown
+	animation-name zoomInDown
+	animation-duration 1s
+	animation-fill-mode both
+	animation-iteration-count 1
 
 @keyframes openNav
 	from
@@ -12,3 +25,21 @@
 	to
 		min-height 150%
 		min-width 150%
+
+@keyframes fadeInDown
+	from
+		opacity 0
+		transform translate3d(0, -100%, 0)
+	to
+		opacity 1
+		transform none
+
+@keyframes zoomInDown
+	from
+		opacity 0
+		transform scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0)
+		animation-timing-function cubic-bezier(0.550, 0.055, 0.675, 0.190)
+	60%
+		opacity 1
+		transform scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0)
+		animation-timing-function cubic-bezier(0.175, 0.885, 0.320, 1)
