@@ -120,13 +120,19 @@ function displaywheel(e){
 	}
 }
 
-$(document).ready(function() {
-
+function initVSOP() {
+	currentSection = 0;
+	currentHeight = 0;
 	if (enabledEvents(getWindowWidth())) {
 		initSetupDesktop();
 	} else {
 		initSetupMobile();
 	}
+}
+
+$(document).ready(function() {
+
+	initVSOP();
 
 	// KEYS
 	$(document).keydown(function(event) {

@@ -1,23 +1,23 @@
 'use strict';
 
-function setBodyHTML(html) {
-	$('#MainBody').html(html);
+function setHTML(seccion,html) {
+	$('#'+seccion).html(html);
 }
 
 $('.btn-evento').click(function(event){
 	event.preventDefault();
 	isHome = false;
-	initSetupMobile();
 	$.ajax({
 		url: '../templates/evento.html',
 		dataType: 'html',
 		beforeSend: function() {
-			setBodyHTML('');
+			$('#VerticalScrollFullPage').css({'display':'none'});
 			setLoaderDisplay('block');
 		},
 		success: function(html) {
 			setTimeout(function(){
-				setBodyHTML(html);
+				setHTML('secondpage',html);
+				initSetupMobile();
 				animationLoader();
 				animationNavbar();
 			},3000);
@@ -25,10 +25,109 @@ $('.btn-evento').click(function(event){
 	});
 });
 
-// $(document).ready(function () {
-//     $(document).ajaxStart(function () {
-//         $("#loading").show();
-//     }).ajaxStop(function () {
-//         $("#loading").hide();
-//     });
-// });
+$('.btn-audiovisual').click(function(event){
+	event.preventDefault();
+	isHome = false;
+	initSetupMobile();
+	$.ajax({
+		url: '../templates/audiovisual.html',
+		dataType: 'html',
+		beforeSend: function() {
+			$('#VerticalScrollFullPage').css({'display':'none'});
+			setLoaderDisplay('block');
+		},
+		success: function(html) {
+			setTimeout(function(){
+				setHTML('secondpage',html);
+				animationLoader();
+				animationNavbar();
+			},3000);
+		}
+	});
+});
+
+$('.btn-comunicacion').click(function(event){
+	event.preventDefault();
+	isHome = false;
+	initSetupMobile();
+	$.ajax({
+		url: '../templates/comunicacion.html',
+		dataType: 'html',
+		beforeSend: function() {
+			$('#VerticalScrollFullPage').css({'display':'none'});
+			setLoaderDisplay('block');
+		},
+		success: function(html) {
+			setTimeout(function(){
+				setHTML('secondpage',html);
+				animationLoader();
+				animationNavbar();
+			},3000);
+		}
+	});
+});
+
+$('.btn-digital').click(function(event){
+	event.preventDefault();
+	isHome = false;
+	initSetupMobile();
+	$.ajax({
+		url: '../templates/digital.html',
+		dataType: 'html',
+		beforeSend: function() {
+			$('#VerticalScrollFullPage').css({'display':'none'});
+			setLoaderDisplay('block');
+		},
+		success: function(html) {
+			setTimeout(function(){
+				setHTML('secondpage',html);
+				animationLoader();
+				animationNavbar();
+			},3000);
+		}
+	});
+});
+
+$('.btn-stand').click(function(event){
+	event.preventDefault();
+	isHome = false;
+	$.ajax({
+		url: '../templates/stands.html',
+		dataType: 'html',
+		beforeSend: function() {
+			$('#VerticalScrollFullPage').css({'display':'none'});
+			setLoaderDisplay('block');
+		},
+		success: function(html) {
+			setTimeout(function(){
+				setHTML('secondpage',html);
+				initSetupMobile();
+				animationLoader();
+				animationNavbar();
+			},3000);
+		}
+	});
+});
+
+
+$('.btn-home').click(function(event){
+	event.preventDefault();
+	isHome = true;
+	$.ajax({
+		url: '../templates/home.html',
+		dataType: 'html',
+		beforeSend: function() {
+			$('#VerticalScrollFullPage').css({'display':'block'});
+			setLoaderDisplay('block');
+		},
+		success: function(html) {
+			setTimeout(function(){
+				setHTML('secondpage','');
+				initVSOP();
+				initMap();
+				animationLoader();
+				animationNavbar();
+			},3000);
+		}
+	});
+});
