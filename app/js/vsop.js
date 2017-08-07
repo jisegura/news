@@ -147,7 +147,7 @@ $(document).ready(function() {
 				default:
 					break;
 			}
-			event.preventDefault();
+			//event.preventDefault(); /* solo hacer el preventDefault cuando los inputs NO estan en focus*/
 		}
 	});
 

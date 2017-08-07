@@ -6,6 +6,9 @@ html
 	line-height 1.4
 
 ::selection
+	background-color $gray80
+	text-shadow none
+
 ::-moz-selection
 	background-color $gray80
 	text-shadow none
@@ -58,6 +61,7 @@ textarea
 			background rgba($black, 0.6)
 
 		.center-row
+		.bottom-row
 			text-align center
 			width 100%
 			z-index 2
@@ -130,3 +134,25 @@ textarea
 
 		&:after
 			left 0
+
+#portfolio
+	width auto
+	min-width 210px
+	font-size 20px
+	position relative
+	overflow hidden
+	color $white
+	font-family $futurafont
+	font-weight 400
+	letter-spacing 2px
+	background-color transparent
+	text-decoration none
+	text-transform uppercase
+	box-sizing border-box
+	border 3px solid $white
+	zoom 1
+	padding 2px 5px
+	word-spacing 0
+
+	&:focus
+		outline none
