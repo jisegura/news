@@ -1,0 +1,96 @@
+#vsop-nav
+  position: fixed
+  z-index: 100
+  margin-top: -32px
+  top: 50%
+  opacity: 1
+  transform: translate3d(0,0,0)
+  
+  &.vsop-right
+    right: 17px
+    
+  &.vsop-left
+    left: 17px
+    
+  ul
+    margin: 0
+    padding: 0
+    
+    li
+      display: block
+      width: 14px
+      height: 13px
+      margin: 7px
+      position: relative
+      
+      a
+        display: block
+        position: relative
+        z-index: 1
+        width: 100%
+        height: 100%
+        cursor: pointer
+        text-decoration: none
+    
+        span
+          border-radius: 50%
+          position: absolute
+          z-index: 1
+          height: 4px
+          width: 4px
+          border: 0
+          background: #333
+          left: 50%
+          top: 50%
+          margin: -2px 0 0 -2px
+          transition: all 0.1s ease-in-out
+          
+        &.active
+          
+          span
+            height: 12px
+            width: 12px
+            margin: -6px 0 0 -6px
+            border-radius: 100%
+            
+      .vsop-tooltip
+        position: absolute
+        top: -2px
+        color: #fff
+        font-size: 14px
+        font-family: arial, helvetica, sans-serif
+        white-space: nowrap
+        max-width: 220px
+        overflow: hidden
+        display: block
+        opacity: 0
+        width: 0
+        cursor: pointer
+        
+        &.vsop-right
+          right: 20px
+          
+        &.vsop-left
+          left: 20px
+    
+      &:hover
+        
+        a
+          
+          span
+            width: 10px
+            height: 10px
+            margin: -5px 0px 0px -5px
+            
+          &.active
+            
+            span
+              height: 12px
+              width: 12px
+              margin: -6px 0 0 -6px
+              border-radius: 100%
+              
+        .vsop-tooltip
+          transition: opacity 0.2s ease-in
+          width: auto
+          opacity: 1

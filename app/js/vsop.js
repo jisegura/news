@@ -65,6 +65,43 @@ function initSecciones(h) {
 	});
 }
 
+function setIndexNav() {
+	$('#vsop-nav ul li a.active').removeClass('active');
+	$($('#vsop-nav ul li a')[currentSection]).addClass('active');
+}
+
+function initNav() {
+	var $nav = $('#vsop-nav');
+	var $ul = $('<ul></ul>');
+	$('.section').each(function(i){
+		var tooltil = $(this).attr('class').split(' ').filter(function(cn) {
+	        return cn.indexOf('vsop') === 0;
+	    }).pop().split('-')[1];
+	    if (i == currentSection) {
+	    	var $a = $('<a href="#" class="active"><span></span></a>');
+	    } else {
+	    	var $a = $('<a href="#"><span></span></a>');
+	    }
+		var $div = $('<div class="vsop-tooltip vsop-right">'+tooltil+'</div>');
+		var $li = $('<li></li>');
+		$a.appendTo($li);
+		$div.appendTo($li);
+		$li.appendTo($ul);
+	});
+	$ul.appendTo($nav);
+
+	$('#vsop-nav ul li').click(function() {
+		if (!$(this).children('a').hasClass('active')) {
+			var index = $(this).index();
+			transitionScroll(currentSection - index);
+		}
+	});
+}
+
+function removeNav() {
+	$('#vsop-nav').empty();
+}
+
 function setSecciones() {
 	$('.section').each(function(){
 		$(this).css({
@@ -80,28 +117,32 @@ function setSecciones() {
 function initSetupDesktop() {
 	initMainContainer('hidden', '100%', 0);
 	initSecciones(getWindowHeight());
+	initNav();
 	currentState = STATE.Desktop;
 }
 
 function initSetupMobile() {
 	initMainContainer('visible', 'auto', 0);
 	initSecciones('auto');
+	removeNav();
 	currentState = STATE.Mobile;
 }
 
 function transitionScroll(value) {
 	if (enAnimacion === false) {
 		if (value >= 0) {
-			if(currentSection > 0){
-				currentSection--;
-				currentHeight = currentHeight+getWindowHeight();
+			if (currentSection - value >= 0) {
+				currentSection = currentSection - value;
+				currentHeight = currentHeight + (getWindowHeight() * value);
 				enAnimacion = true;
+				setIndexNav();
 			}
 		} else {
-			if(currentSection < cantidadSecciones){
-				currentSection++;
-				currentHeight = currentHeight-getWindowHeight();
+			if (currentSection - value <= cantidadSecciones) {
+				currentSection = currentSection - value;
+				currentHeight = currentHeight + (getWindowHeight() * value);
 				enAnimacion = true;
+				setIndexNav();
 			}
 		}
 		$('#VerticalScrollFullPage').css({
@@ -116,7 +157,11 @@ function displaywheel(e){
 	var evt = window.event || e;
 	var delta = evt.detail ? evt.detail*(-120) : evt.wheelDelta;
 	if (enabledEvents(getWindowWidth())) {
-		transitionScroll(delta);
+		if (delta >= 0) {
+			transitionScroll(1);
+		} else {
+			transitionScroll(-1);
+		}
 	}
 }
 
