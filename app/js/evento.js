@@ -8,7 +8,7 @@ $('.btn-evento').click(function(event){
 	event.preventDefault();
 	isHome = false;
 	$.ajax({
-		url: '../templates/evento.html',
+		url: './templates/evento.html',
 		dataType: 'html',
 		beforeSend: function() {
 			$('#VerticalScrollFullPage').css({'display':'none'});
@@ -20,7 +20,7 @@ $('.btn-evento').click(function(event){
 				initSetupMobile();
 				animationLoader();
 				animationNavbar();
-			},3000);
+			},1000);
 		}
 	});
 });
@@ -30,7 +30,7 @@ $('.btn-audiovisual').click(function(event){
 	isHome = false;
 	initSetupMobile();
 	$.ajax({
-		url: '../templates/audiovisual.html',
+		url: './templates/audiovisual.html',
 		dataType: 'html',
 		beforeSend: function() {
 			$('#VerticalScrollFullPage').css({'display':'none'});
@@ -41,7 +41,7 @@ $('.btn-audiovisual').click(function(event){
 				setHTML('secondpage',html);
 				animationLoader();
 				animationNavbar();
-			},3000);
+			},1000);
 		}
 	});
 });
@@ -51,7 +51,7 @@ $('.btn-comunicacion').click(function(event){
 	isHome = false;
 	initSetupMobile();
 	$.ajax({
-		url: '../templates/comunicacion.html',
+		url: './templates/comunicacion.html',
 		dataType: 'html',
 		beforeSend: function() {
 			$('#VerticalScrollFullPage').css({'display':'none'});
@@ -62,7 +62,7 @@ $('.btn-comunicacion').click(function(event){
 				setHTML('secondpage',html);
 				animationLoader();
 				animationNavbar();
-			},3000);
+			},1000);
 		}
 	});
 });
@@ -72,7 +72,7 @@ $('.btn-digital').click(function(event){
 	isHome = false;
 	initSetupMobile();
 	$.ajax({
-		url: '../templates/digital.html',
+		url: './templates/digital.html',
 		dataType: 'html',
 		beforeSend: function() {
 			$('#VerticalScrollFullPage').css({'display':'none'});
@@ -83,7 +83,7 @@ $('.btn-digital').click(function(event){
 				setHTML('secondpage',html);
 				animationLoader();
 				animationNavbar();
-			},3000);
+			},1000);
 		}
 	});
 });
@@ -92,7 +92,7 @@ $('.btn-stand').click(function(event){
 	event.preventDefault();
 	isHome = false;
 	$.ajax({
-		url: '../templates/stands.html',
+		url: './templates/stands.html',
 		dataType: 'html',
 		beforeSend: function() {
 			$('#VerticalScrollFullPage').css({'display':'none'});
@@ -104,7 +104,7 @@ $('.btn-stand').click(function(event){
 				initSetupMobile();
 				animationLoader();
 				animationNavbar();
-			},3000);
+			},1000);
 		}
 	});
 });
@@ -114,7 +114,7 @@ $('.btn-home').click(function(event){
 	event.preventDefault();
 	isHome = true;
 	$.ajax({
-		url: '../templates/home.html',
+		url: './templates/home.html',
 		dataType: 'html',
 		beforeSend: function() {
 			$('#VerticalScrollFullPage').css({'display':'block'});
@@ -127,7 +127,7 @@ $('.btn-home').click(function(event){
 				initMap();
 				animationLoader();
 				animationNavbar();
-			},3000);
+			},1000);
 		}
 	});
 });
