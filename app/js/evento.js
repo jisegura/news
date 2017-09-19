@@ -20,6 +20,7 @@ $('.btn-evento').click(function(event){
 				initSetupMobile();
 				animationLoader();
 				animationNavbar();
+				$('html, body').animate({ scrollTop: 0 }, 0);
 			},1000);
 		}
 	});
@@ -41,6 +42,7 @@ $('.btn-audiovisual').click(function(event){
 				setHTML('secondpage',html);
 				animationLoader();
 				animationNavbar();
+				$('html, body').animate({ scrollTop: 0 }, 0);
 			},1000);
 		}
 	});
@@ -62,6 +64,7 @@ $('.btn-comunicacion').click(function(event){
 				setHTML('secondpage',html);
 				animationLoader();
 				animationNavbar();
+				$('html, body').animate({ scrollTop: 0 }, 0);
 			},1000);
 		}
 	});
@@ -83,6 +86,7 @@ $('.btn-digital').click(function(event){
 				setHTML('secondpage',html);
 				animationLoader();
 				animationNavbar();
+				$('html, body').animate({ scrollTop: 0 }, 0);
 			},1000);
 		}
 	});
@@ -104,6 +108,7 @@ $('.btn-stand').click(function(event){
 				initSetupMobile();
 				animationLoader();
 				animationNavbar();
+				$('html, body').animate({ scrollTop: 0 }, 0);
 			},1000);
 		}
 	});
