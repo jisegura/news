@@ -15,6 +15,7 @@ var currentHeight = 0;
 var currentState;
 var video = document.getElementById('bgvid');
 var source = document.createElement('source');
+var $logo = $('.title-img').find('img');
 
 function getWindowHeight() {
 	return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -132,6 +133,7 @@ function initSetupDesktop() {
 	initMainContainer('hidden', '100%', 0);
 	initSecciones(getWindowHeight());
 	initNav();
+	$logo.hide();
 	changeVideoSource(video, 'videos/NEWS.mp4', 'video/mp4','play');
 	currentState = STATE.Desktop;
 }
@@ -140,6 +142,7 @@ function initSetupMobile() {
 	initMainContainer('visible', 'auto', 0);
 	initSecciones('auto');
 	removeNav();
+	$logo.show();
 	changeVideoSource(video, '', 'video/mp4','pause');
 	currentState = STATE.Mobile;
 }
