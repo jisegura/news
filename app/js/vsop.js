@@ -13,6 +13,8 @@ var cantidadSecciones = 0;
 var enAnimacion = false;
 var currentHeight = 0;
 var currentState;
+var video = document.getElementById('bgvid');
+var source = document.createElement('source');
 
 function getWindowHeight() {
 	return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -114,10 +116,23 @@ function setSecciones() {
 	});
 }
 
+function changeVideoSource(element, src, type, action) {
+    source.src = src;
+    source.type = type;
+	element.appendChild(source);
+	if(action=='play'){
+		video.play();
+	}
+	else if(action=='pause'){
+		video.pause();
+	}
+}
+
 function initSetupDesktop() {
 	initMainContainer('hidden', '100%', 0);
 	initSecciones(getWindowHeight());
 	initNav();
+	changeVideoSource(video, 'videos/NEWS.mp4', 'video/mp4','play');
 	currentState = STATE.Desktop;
 }
 
@@ -125,6 +140,7 @@ function initSetupMobile() {
 	initMainContainer('visible', 'auto', 0);
 	initSecciones('auto');
 	removeNav();
+	changeVideoSource(video, '', 'video/mp4','pause');
 	currentState = STATE.Mobile;
 }
 
