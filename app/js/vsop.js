@@ -195,6 +195,8 @@ $(document).ready(function() {
 
 	initVSOP();
 
+	video.volume = 0.3;
+
 	// KEYS
 	$(document).keydown(function(event) {
 		if (enabledEvents(getWindowWidth())) {
