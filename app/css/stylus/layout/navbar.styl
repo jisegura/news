@@ -64,31 +64,42 @@ nav
 
 				li
 					position relative
+					padding 5px
 
 					a
 						color $white
 						font-family $futurafont
-						font-size 18px
+						font-size 1em
 						font-weight 700
 						letter-spacing 2px
-						padding-bottom 25px
-						padding-top 25px
+						padding-bottom 15px
+						padding-top 15px
 						text-transform uppercase
 						z-index 2000
-						transition color 0.3s ease
+						transition all 0.3s ease
 
 						&:hover
 						&:focus
-							color $gray80
+							color $black
+							background-color rgba($white, 0.8)
 
 					&.active
 
 						a
-							color $white
+							color $black
 							cursor default
-							background-color transparent
+							background-color $white
 
-							&:hover
-							&:focus
-								color $white
-								background-color transparent
+						&:hover
+						&:focus
+
+							a
+								color $black
+								background-color $white
+
+					&:hover
+					&:focus
+
+						a
+							color $black
+							background-color rgba($white, 0.8)
