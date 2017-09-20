@@ -127,9 +127,17 @@
 						.text
 							width auto
 							margin 100px 30px
-							
+
 	.footer
 		height auto
+
+		.container
+
+			.footer-portfolio
+				text-align center !important
+
+			.footer-copyr-powered
+				margin 20px 0 0 0 !important
 
 @media (min-width: 768px)
 	.section
@@ -211,9 +219,18 @@
 
 							&:after
 								max-height 80px
-							
+
 	.footer
-		height 80px
+		height auto
+
+@media (min-width: 768px) and (max-width: 991px)
+
+	.footer
+
+		.container
+
+			.footer-copyr-powered
+				margin 0px 0 0 0 !important
 
 @media (min-width: 768px) and (max-width: 1199px)
 
@@ -239,6 +256,17 @@
 						.text
 							width 60%
 							margin 106px auto
+
+	.footer
+
+		.container
+			padding 15px 0px
+
+			.footer-portfolio
+				text-align left
+
+				input
+					min-width auto !important
 
 @media (min-width: 1200px)
 
