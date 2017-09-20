@@ -25,3 +25,5 @@ function animationLogo() {
 		$(this).removeClass('zoomInDown');
 	});
 }
+
+$(document).ready(setTimeout(animationLoader,1000));

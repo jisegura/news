@@ -99,6 +99,19 @@ function initNav() {
 			transitionScroll(currentSection - index);
 		}
 	});
+
+	$('#portfolioHOME').click(function(event) {
+		event.preventDefault();
+		transitionScroll(-cantidadSecciones);
+		setTimeout(function portfolioFocus(){
+			if(!enAnimacion){
+				$("#portfolio").focus();
+			}
+			else{
+				setTimeout(portfolioFocus,500);
+			}
+		},500);
+	});
 }
 
 function removeNav() {
@@ -148,6 +161,9 @@ function initSetupMobile() {
 }
 
 function transitionScroll(value) {
+	if(document.activeElement.tagName == 'INPUT'){
+		document.activeElement.blur();
+	}
 	if (enAnimacion === false) {
 		if (value >= 0) {
 			if (currentSection - value >= 0) {
@@ -243,16 +259,21 @@ $(document).ready(function() {
 		}
 	});
 
-	$(window).resize(function() {
-		if (enabledEvents(getWindowWidth())) {
-			if (currentState !== STATE.Desktop) {
-				initSetupDesktop();
+	$(window).resize(function resizeWindow() {
+		if(document.activeElement.id != 'portfolioDL'){
+			if (enabledEvents(getWindowWidth())) {
+				if (currentState !== STATE.Desktop) {
+					initSetupDesktop();
+				}
+				setSecciones();
+			} else {
+				if (currentState !== STATE.Mobile) {
+					initSetupMobile();
+				}
 			}
-			setSecciones();
-		} else {
-			if (currentState !== STATE.Mobile) {
-				initSetupMobile();
-			}
+		}
+		else{
+			document.activeElement.blur();
 		}
 	});
 });
