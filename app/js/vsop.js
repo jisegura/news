@@ -101,8 +101,7 @@ function initNav() {
 	});
 
 	$('#portfolioHOME').click(function(event) {
-		event.preventDefault();
-		transitionScroll(-cantidadSecciones);
+		transitionScroll(currentSection - cantidadSecciones);
 		setTimeout(function portfolioFocus(){
 			if(!enAnimacion){
 				$("#portfolio").focus();
