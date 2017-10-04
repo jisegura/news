@@ -20,10 +20,20 @@ function animationNavbar() {
 	});
 }
 
+function animationBtn() {
+	$('#animateBtn').addClass('fadeIn').one(endAnimation, function() {
+		$(this).removeClass('fadeIn');
+	});
+}
+
 function animationLogo() {
 	$('#logo').addClass('zoomInDown').one(endAnimation, function() {
 		$(this).removeClass('zoomInDown');
 	});
 }
 
-$(window).on('load', function(){(animationLoader())});
+$(window).on('load', function(){
+	animationLoader();
+	animationNavbar();
+	animationBtn();
+});
