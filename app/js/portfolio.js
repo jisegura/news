@@ -1,5 +1,6 @@
 var pa = 0;
 var link = document.getElementsByClassName('portfolioDL')[0];
+var portfolioMODAL = $('#portfolioMODAL');
 
 $( document ).ready(function() {
     $(".portfolioDL").click(function(event) {
@@ -12,15 +13,16 @@ $( document ).ready(function() {
                     pa = 1;
                     var newWin = window.open(link);            
                     if(!newWin || newWin.closed || typeof newWin.closed=='undefined'){
-                        console.log('bloqueado papu');
+                        portfolioMODAL.text('VENTANAS EMERGENTES BLOQUEADAS');
                     }
                 }
                 else{
-                    alert("codigo incorrecto");
+                    portfolioMODAL.text('CODIGO INCORRECTO');
                 }
             });
         }
         else{
+            portfolioMODAL.text('ESTADO: DESBLOQUEADO');
             window.open(link);
         }
     });
