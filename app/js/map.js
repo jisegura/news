@@ -383,7 +383,7 @@ function initMap() {
 function agregarMarker(){
   var image = './images/marker.png';
   var mHPG = 'News BTL';
-  var iHPG = '<a href="https://goo.gl/pBIJYd" target="_blank">Como llegar?</a>';
+  var iHPG = '<a href="https://goo.gl/pBIJYd" target="_blank">INDICACIONES</a>';
   var myLatLng = {lat: -38.010865, lng: -57.5378526};
 
   var newsBTL = new google.maps.Marker({

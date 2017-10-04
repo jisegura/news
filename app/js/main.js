@@ -26,4 +26,4 @@ function animationLogo() {
 	});
 }
 
-$(document).ready(setTimeout(animationLoader,1000));
+$(window).on('load', function(){(animationLoader())});
