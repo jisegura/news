@@ -51,17 +51,26 @@
 			overflow hidden
 			transition 1s all
 
+			#logo
+				display none !important
+				left 2% !important
+				top 2% !important
+
 			.container
 				height 100%
 
 				.navbar-collapse
-					min-height 100%
+					height calc(100% - 50px) !important
 					opacity 0
+					overflow auto
 					transition 0.5s opacity
 
 					ul
+						display block !important
+						margin 0
 
 						li
+							padding 0
 
 							a
 								font-size 22px
@@ -83,6 +92,9 @@
 
 			&.open
 				height 100%
+
+				#logo
+					display block !important
 
 			&.openAnimation
 
