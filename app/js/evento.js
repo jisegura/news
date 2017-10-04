@@ -115,7 +115,7 @@ $('.btn-stand').click(function(event){
 });
 
 
-$('.btn-home').click(function(event){
+/* $('.btn-home').click(function(event){
 	event.preventDefault();
 	isHome = true;
 	$.ajax({
@@ -135,4 +135,4 @@ $('.btn-home').click(function(event){
 			},1000);
 		}
 	});
-});
+}); */
