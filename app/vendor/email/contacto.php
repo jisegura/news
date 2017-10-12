@@ -1,21 +1,23 @@
 <?php
 
 if($_POST){
-    $name = $_REQUEST['first_name'];
-    $lname = $_REQUEST['last_name'];
-    $email = $_REQUEST['email'];
-    $comment = $_REQUEST['comment'];
+    $name = $_REQUEST['nombre'];
+    $company = $_REQUEST['empresa'];
+    $telephone = $_REQUEST['telefono'];
+    $email = $_REQUEST['mail'];
+    $comment = $_REQUEST['comentario'];
 
     $to = "hshpsoftware@gmail.com";
 
     $mensaje =
 		"Nombre: " .$name ."\r\n"
-        ."Apellido: " .$lname ."\r\n" ."\r\n"
-		."Email: " .$email ."\r\n" ."\r\n"
+        ."Empresa: " .$company ."\r\n" ."\r\n"
+        ."Email: " .$email ."\r\n" ."\r\n"
+        ."Teléfono: " .$telephone ."\r\n" ."\r\n"
         ."Comentario: " .$comment ."\r\n"
     ;
 
-	$subject = "HSHP Web - Consulta de: " .$email;
+	$subject = "NEWS Web - Consulta de: " .$name ."-" .$company;
 
 	$header = "From: " .$email ."\r\n";
 	$header.= "MIME-Version: 1.0\r\n";
