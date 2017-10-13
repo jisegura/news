@@ -101,15 +101,20 @@ function initNav() {
 	});
 
 	$('#portfolioHOME').click(function(event) {
-		transitionScroll(currentSection - cantidadSecciones);
-		setTimeout(function portfolioFocus(){
-			if(!enAnimacion){
-				$("#portfolio").focus();
-			}
-			else{
-				setTimeout(portfolioFocus,500);
-			}
-		},500);
+		if(currentState !== STATE.Mobile) {
+			transitionScroll(currentSection - cantidadSecciones);
+			setTimeout(function portfolioFocus(){
+				if(!enAnimacion){
+					$("#portfolio").focus();
+				}
+				else{
+					setTimeout(portfolioFocus,500);
+				}
+			},500);
+		}
+		else {
+			$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+		}
 	});
 }
 

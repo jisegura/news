@@ -19,31 +19,29 @@ $("#brifeanos-send").click(function(event) {
         "telefono": telefono,
         "comentario": comentario
       };
-      $('#brifeanos-send').html('Enviando... <i class="fa fa-paper-plane" aria-hidden="true"></i>');
+      $('#brifeanos-send').html('Enviando...');
       $.ajax({
           type: "POST",
           url: "vendor/email/contacto.php",
           data: data,
           success: function(){
-            /* $("#contacto-error-message").addClass("hidden");
-            $("#contacto-info-message").addClass("hidden");
-            $("#contacto-success-message").removeClass("hidden"); */
-            console.log("enviado");
-            $('#brifeanos-send').html('Enviado <i class="fa fa-paper-plane" aria-hidden="true"></i>');
+            $('#brifeanos-alert').find("span").html("Consulta enviada exitosamente, nos comunicaremos a la brevedad.");
+            $('#brifeanos-alert').removeClass('bri-error');
+            $('#brifeanos-alert').addClass('bri-success');
+            $('#brifeanos-send').html('Enviar');
           },
           error:function () {
-            /* $("#contacto-success-message").addClass("hidden");
-            $("#contacto-info-message").addClass("hidden");
-            $("#contacto-error-message").removeClass("hidden"); */
-            console.log("error");
-            $('#brifeanos-send').html('Error <i class="fa fa-paper-plane" aria-hidden="true"></i>');
+            $('#brifeanos-alert').find("span").html("Error al enviar consulta, intente nuevamente.");
+            $('#brifeanos-alert').removeClass('bri-success');
+            $('#brifeanos-alert').addClass('bri-error');
+            $('#brifeanos-send').html('Enviar');
           }
       });
     }
     else {
-      /* $("#contacto-error-message").addClass("hidden");
-      $("#contacto-success-message").addClass("hidden");
-      $("#contacto-info-message").removeClass("hidden"); */
+      $('#brifeanos-alert').find("span").html("Complete todos los campos.");
+      $('#brifeanos-alert').removeClass('bri-success');
+      $('#brifeanos-alert').addClass('bri-error');
     }
 
 });
