@@ -2,6 +2,7 @@
 
 const KEY_UP = 38;
 const KEY_DOWN = 40;
+const KEY_TAB = 9;
 const WIDTH_MOBILE = 768;
 const STATE = {
 	Mobile: 'mobile',
@@ -229,6 +230,9 @@ $(document).ready(function() {
 					break;
 				case KEY_DOWN:
 					transitionScroll(-1);
+					break;
+				case KEY_TAB:
+					event.preventDefault();
 					break;
 				default:
 					break;
