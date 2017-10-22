@@ -88,8 +88,8 @@ textarea
 
 .a_btn
 	width auto
-	min-width 210px
-	font-size 1em
+	min-width 180px
+	font-size 0.95em
 	position relative
 	overflow hidden
 	color $white
@@ -104,6 +104,10 @@ textarea
 	border 3px solid $white
 	zoom 1
 	word-spacing 0
+	height 50px
+	padding 14px 22px 0px
+	margin 10px 25px
+	display inline-block
 
 	&:before
 		content ""
@@ -113,6 +117,11 @@ textarea
 		bottom 0
 		right 100%
 		transition all 0.2s ease-in-out
+		height 50px
+		border-top 25px solid transparent
+		border-bottom 25px solid rgba($white,0.45)
+		border-right 180px solid transparent
+		border-left 180px solid rgba($white,0.45)
 
 	&:after
 		content ""
@@ -122,6 +131,11 @@ textarea
 		top 0
 		left 100%
 		transition all 0.2s ease-in-out
+		height 50px
+		border-top 25px solid rgba($white,0.45)
+		border-bottom 25px solid transparent
+		border-right 180px solid rgba($white,0.45)
+		border-left 180px solid transparent
 
 
 	&:hover
@@ -156,3 +170,10 @@ textarea
 
 	&:focus
 		outline none
+
+.imgsize
+	text-align-last center
+
+	img
+		max-width 80%
+		display inline-block
